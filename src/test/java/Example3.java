@@ -11,6 +11,9 @@ public class Example3 {
 
         try {
             Object obj = parser.parse(new FileReader("example3.json"));
+            // JSONObject jsonObject =  (JSONObject) obj;
+
+
 
           //write code here to print all the titles and the associated categories
 
