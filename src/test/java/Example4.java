@@ -16,16 +16,14 @@ public class Example4 {
 
         try {
             Object obj = parser.parse(new FileReader("example4.json"));
-            JSONObject jsonObject =  (JSONObject) obj;
+            //write code here to print all the type of phone no and the corresponding no
+            HashMap<String, ?> userDetails = (HashMap<String, ?>) obj;
+            List<HashMap<String,String>> phoneNumberList = (List<HashMap<String, String>>) userDetails.get("phoneNumber");
 
-            HashMap<String, String> userDetails = (HashMap<String, String>)obj;
-            List<Map<String, ?>> phoneNumberInfo = (List<Map<String, ?>>) jsonObject.get("phoneNumber");
-
-
-            for(int i = 0; i < phoneNumberInfo.size(); i++) {
-                System.out.print(phoneNumberInfo.get(i).get("type").toString());
-                System.out.println(phoneNumberInfo.get(i).get("number").toString());
-
+            for ( HashMap<String, String> phoneNumber : phoneNumberList)
+            {
+                System.out.println("Type of Phone: " + phoneNumber.get("type"));
+                System.out.println("Phone number: " + phoneNumber.get("number"));
             }
 
           //write code here to print all the type of phone no and the corresponding no
